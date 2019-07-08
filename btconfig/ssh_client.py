@@ -28,7 +28,11 @@ class SSHClient:
     
     def run(self, command, target=None):
         if target:
-            return [v.exec_command(command)]
+            try:
+                client = self.connections[target]
+                return [client.exec_command(command)]
+            except:
+                print("No such connection", target)
         
         results = []
         for k, v in self.connections.items():

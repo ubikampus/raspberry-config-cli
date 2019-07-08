@@ -4,7 +4,7 @@ import sys
 from unittest.mock import patch
 from btconfig import parser
 
-class CommandTest(unittest.TestCase):
+class ParserTest(unittest.TestCase):
     
     def setUp(self):
         self.parser = parser.Parser()
@@ -41,9 +41,3 @@ class CommandTest(unittest.TestCase):
         with patch.object(sys, 'argv', arg2):
             res = self.parser.parse()
             assert res == "second called two"
-
-        
-        
-
-#if __name__ == "__main__":
-#    unittest.main()
