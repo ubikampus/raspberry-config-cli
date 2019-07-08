@@ -1,0 +1,12 @@
+[general]
+# path to the ssh private key to be used
+pkey_path = /home/username/.ssh/id_rsa
+
+# how long a single ssh connect is tried
+timeout=2
+
+# ssh addresses of the client raspberries
+# the keys can be anything, they don't have to be rasp-n
+[raspberry]
+rasp-1 = 127.0.0.1
+rasp-2 = 127.0.0.2
