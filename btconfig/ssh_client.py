@@ -8,18 +8,22 @@ class SSHClient:
 
         rasps = config['raspberry']
         timeout = config['general']['timeout'] or 5
+        
+        try:
+            timeout = int(timeout)
+        except:
+            print("Timeout must be a float")
+            return
 
         for key in rasps:
-            print(key)
             try:
                 client = paramiko.SSHClient()
                 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-                print("Hangs")
                 client.connect(rasps[key], username='pi', pkey=self.pkey, timeout=timeout)
-                print("Here")
+
                 self.connections[key] = client
             except Exception as e:
-                print(e)
+                print(key, e)
 
     
     def run(self, command, target=None):
