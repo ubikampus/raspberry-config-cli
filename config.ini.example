@@ -1,0 +1,6 @@
+[general]
+pkey_path = /home/username/.ssh/id_rsa
+timeout=2
+[raspberry]
+rasp-1 = 127.0.0.1
+rasp-2 = 127.0.0.2

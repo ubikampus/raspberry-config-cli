@@ -6,7 +6,7 @@ from .parser import Parser
 
 def run():
     config = configparser.ConfigParser()
-    config.read('config/config.ini')
+    config.read('config.ini')
 
     client = SSHClient(config)
 
