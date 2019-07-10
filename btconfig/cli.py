@@ -19,11 +19,15 @@ def run():
     def stop(target):
         return client.run("sudo systemctl stop btscanner.service && echo stopped", target)
 
+    def install(target):
+        return client.installer(target)
+
     parser = Parser()
 
     parser.create_subcommand('status', status)
     parser.create_subcommand('start', start)
     parser.create_subcommand('stop', stop)
+    parser.create_subcommand('install', install)
     
     res = parser.parse()
 

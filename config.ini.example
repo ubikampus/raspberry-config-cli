@@ -1,6 +1,9 @@
 [general]
 # path to the ssh private key to be used
-pkey_path = /home/username/.ssh/id_rsa
+pkey_path=/home/username/.ssh/id_rsa
+
+# username used in ssh for all connections
+default_username=pi
 
 # how long a single ssh connect is tried
 timeout=2
