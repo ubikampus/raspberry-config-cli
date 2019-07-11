@@ -34,6 +34,8 @@ class SSHClient:
         return results
 
     def installer(self, target=None):
+        self.connect(target)
+
         results = []
         for k, v in self.connections.items():
             results.append(installer(v))
