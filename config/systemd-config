@@ -6,4 +6,4 @@ After=network.target
 Environment=mqttUrl=<url>
 Environment=raspId=<id>
 User=pi
-ExecStart=/home/pi/.config/versions/node/v8.16.0/bin/node  /home/pi/bt-scanner/src/app.js
+ExecStart=/home/pi/.nvm/versions/node/v8.16.0/bin/node  /home/pi/bt-scanner/src/app.js
