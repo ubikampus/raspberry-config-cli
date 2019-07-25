@@ -1,0 +1,9 @@
+[Unit]
+Description=Bluetooth scanner
+After=network.target
+
+[Service]
+Environment=mqttUrl=<url>
+Environment=raspId=<id>
+User=pi
+ExecStart=/home/pi/.nvm/versions/node/v8.16.0/bin/node  /home/pi/bt-scanner/src/app.js

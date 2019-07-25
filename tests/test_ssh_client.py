@@ -8,7 +8,14 @@ class FakeClient():
 
 class MockSSHClient(ssh_client.SSHClient):
     def __init__(self):
-        self.connections = { 'm1': FakeClient(), 'm2': FakeClient() }
+        self.connections = {}
+        pass
+
+    def connect(self, target=None):
+        if target:
+            self.connections[target] = FakeClient()
+        else:
+            self.connections = {"m1": FakeClient(), "m2": FakeClient()}
 
 class ClientTest(unittest.TestCase):
     def setUp(self):
