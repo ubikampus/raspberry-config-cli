@@ -19,10 +19,10 @@ To use the app, you need a valid configuration file, called `config.ini`.The con
 ### Commands
 All of the commands can target a single raspberry, or all of the raspberries. The structure of the commands is `<command> [<target>]`. For example `install rasp-1` or `status`. 
 #### Install
-To start using a raspberry, you need to run the installation command. It installs all the necessary software and dependencies, and creates the systemd service. <b>Note! This command might take multiple minutes per raspberry</b>
+To start using a raspberry, you need to run the installation command. It installs all the necessary software and dependencies, and creates the systemd service. <b>Note! This command might take multiple minutes per raspberry.</b>
 #### Start
-Starts the bluetooth scanner with `systemctl`
+Starts scanning for bluetooth devices, and sends the data to mqtt.
 #### Stop
-Stops the bluettoth scanner with `systemctl`
+Stops scanning for bluetooth devices.
 #### Status
-Reports the status (`systemctl status`) of the scanner service
+Reports the status (`systemctl status`) of the scanner service.
